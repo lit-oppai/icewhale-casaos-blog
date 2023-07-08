@@ -1,0 +1,36 @@
+<header class="header">
+  <div class="content">
+    <div class="nav-item grow-0">Nav1</div>
+    <div class="nav-item grow-0">Nav2</div>
+    <div class="nav-item grow-0">Nav3</div>
+    <div class="nav-item grow-0">Nav4</div>
+    <div class="nav-item grow-0">Nav5</div>
+    <div class="nav-item grow-0">Nav6</div>
+    <div class="nav-item grow"></div>
+    <div class="grow">
+      <i class="fas fa-search" onclick="openSearch()"></i>
+      <input id="searchBox" type="text" onkeydown="search(event)" style="display: none;" />
+    </div>
+  </div>
+</header>
+
+<div class="container" style="flex-direction: column; height: 100vh;">
+  <aside style="width: 200px;"> 
+    <ul>
+      <li class="content-ref" onclick="navigateTo('content1')">Title1</li>
+      <li class="content-ref" onclick="navigateTo('content2')">Title2</li>
+      <li class="content-ref" onclick="navigateTo('content3')">Title3</li>
+      <li class="content-ref" onclick="navigateTo('content4')">Title4</li>
+      <li class="content-ref" onclick="navigateTo('content5')">Title5</li>
+      <li class="content-ref" onclick="navigateTo('content6')">Title6</li>
+    </ul>
+  </aside>
+  <main style="flex: 1; overflow-y: auto; text-align: center;" class="content">
+    <section id="content1" style="height:500px">Content1</section>
+    <section id="content2" style="height:500px">Content2</section>
+    <section id="content3" style="height:500px">Content3</section>
+    <section id="content4" style="height:500px">Content4</section>
+    <section id="content5" style="height:500px">Content5</section>
+    <section id="content6" style="height:500px">Content6</section>
+  </main>
+</div>

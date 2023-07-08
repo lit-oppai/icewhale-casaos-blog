@@ -1,0 +1,215 @@
+/*
+.content {
+  display: flex;
+  width: 898px;
+  background-color: antiquewhite;
+}*/
+
+body {
+  height: 100%;
+}
+
+.body {
+  //flex-direction: column;
+  width: 100vw;
+  //height: calc(100vh - 60px);
+  padding-top: 108px;
+  display: flex;
+  justify-content: center;
+  background: hsla(0, 0%, 98%, 1);
+
+  aside {
+    position: fixed;
+    left: 0;
+    top: 260px;
+
+    .content-ref {
+      margin-bottom: 16px;
+
+      font-family: 'Rajdhani SemiBold';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 24px;
+      /* identical to box height, or 133% */
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      color: rgba(26, 26, 26, 0.2);
+
+      img {
+        display: none;
+      }
+
+      &.active {
+        img {
+          display: flex;
+        }
+
+        font-family: 'Rajdhani';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        /* identical to box height, or 130% */
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        color: #1A1A1A;
+      }
+    }
+  }
+
+  .feature-article {
+    background: hsla(0, 0%, 2%, 1);
+    width: 896px;
+    height: 600px;
+
+    .bgImgSrc1 {
+      background-image: url("../images/AD_blocker/1.png");
+    }
+
+    .bgImgSrc2 {
+      background-image: url("../images/AD_blocker/2.png");
+    }
+
+    .bgImg {
+      background-size: 100% 100%;
+      width: 424px;
+      height: 568px;
+
+
+      .article_tag {
+        /* Personal NAS */
+        font-family: 'Rajdhani SemiBold';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height, or 129% */
+        text-transform: uppercase;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        /* 主色 */
+        color: #F1B335;
+      }
+
+      .article_title {
+        /* How to Block Ads on Instagram with ZimaBoard Single Board Server */
+        font-family: 'Rajdhani';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+        /* or 125% */
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        /* Basic/White */
+        color: #FFFFFF;
+      }
+
+      .article_info {
+        /* ZimaBoard - 01/06/2023 */
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height, or 129% */
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  .slideshow-article {
+    .swiper {
+      height: 504px;
+      width: 896px;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+      border: 1px solid #1A1A1A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .swiper-button-next {
+      /* Rectangle 3468518 */
+      background: #1A1A1A;
+    }
+
+    .swiper-button-prev {
+
+    }
+
+    //.swiper-pagination {
+    //  width: 50px;
+    //  height: 5px;
+    //  background: white;
+    //}
+
+    .bgImgSrc1 {
+      background-image: url("../images/latest_news/1.png");
+    }
+
+    .bgImgSrc2 {
+      background-image: url("../images/latest_news/1.png");
+    }
+
+    .bgImg {
+      background-size: 100% 100%;
+      height: 504px;
+      width: 896px;
+
+      .article_tag {
+        /* Latest News */
+        font-family: 'Rajdhani SemiBold';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height, or 129% */
+        text-transform: uppercase;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        /* Basic/White */
+        color: #FFFFFF;
+      }
+
+      .article_title {
+        /* ZimaBoard Prime Discount Day -14th Of Each Month */
+        font-family: 'Rajdhani';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 32px;
+        /* identical to box height, or 114% */
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        /* Basic/White */
+        color: #FFFFFF;
+      }
+
+      .article_info {
+        /* ZimaBoard - 06/06/2023 */
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height, or 129% */
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        /* Basic/White */
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  height: 448px;
+  background: #101010;
+}

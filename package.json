@@ -5,7 +5,9 @@
   "main": "index.js",
   "author": "Tania Rascia",
   "license": "MIT",
+  "packageManager": "pnpm@8.6.6",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "lint": "eslint 'src/**/*.js' || true",
@@ -33,9 +35,12 @@
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-import-resolver-webpack": "^0.13.2",
+    "eslint-plugin-import": "~1.4.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.2",
+    "postcss": "8.4.6",
     "postcss-loader": "^7.0.2",
     "postcss-preset-env": "^7.8.3",
     "prettier": "^2.8.1",
@@ -46,5 +51,9 @@
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1",
     "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "swiper": "^10.0.3",
+    "tailwindcss": "^3.3.2"
   }
 }

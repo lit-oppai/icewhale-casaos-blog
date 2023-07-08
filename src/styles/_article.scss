@@ -1,0 +1,106 @@
+// article card
+section {
+  .headline {
+    .title {
+      /* Reviews */
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 32px;
+      /* identical to box height, or 114% */
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      color: #1A1A1A;
+
+      .badge {
+        /* Total 7 articles */
+        font-family: 'Rajdhani';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        /* identical to box height, or 133% */
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        color: #1A1A1A;
+      }
+    }
+
+    .operation {
+      /* Rectangle 3468524 */
+      height: 40px;
+      width: 106px;
+      box-sizing: border-box;
+      border: 1px solid #1A1A1A;
+
+      /* View All */
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 24px;
+      /* identical to box height, or 133% */
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      /* 主色 */
+      color: #F1B335;
+    }
+
+    .btn-dark {
+      background: hsla(0, 0%, 10%, 1);
+    }
+
+  }
+
+  .card {
+    width: 288px;
+    height: 300px;
+    background: hsla(0, 0%, 100%, 1);
+
+    .copywriters {
+      height: 138px;
+
+      .pre_title {
+        /* Reviews */
+        font-family: 'Rajdhani SemiBold';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height, or 129% */
+        text-transform: uppercase;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        /* 主色 */
+        color: #F1B335;
+      }
+
+      .title {
+        /* LattePanda Review: Alternative Of Raspberry Pi */
+        font-family: 'Rajdhani';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        /* or 130% */
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        color: #1A1A1A;
+      }
+
+      .author {
+        /* ZimaBoard - 01/06/2023 */
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        /* identical to box height, or 129% */
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        color: #1A1A1A;
+      }
+    }
+  }
+}

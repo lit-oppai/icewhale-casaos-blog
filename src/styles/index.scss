@@ -3,5 +3,25 @@
   src: url('../fonts/Inter.ttf');
 }
 
+@font-face {
+  font-family: 'Rajdhani';
+  src: url("../fonts/Rajdhani/Rajdhani-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Rajdhani SemiBold';
+  src: url("../fonts/Rajdhani/Rajdhani-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url("../fonts/Mulish/static/Mulish-Regular.ttf");
+}
+
 @import 'variables';
 @import 'scaffolding';
+@import 'header';
+@import 'layout';
+@import 'main';
+@import 'article';
+//@import "../fonts/fontawesome/scss/solid.scss";
