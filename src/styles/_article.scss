@@ -104,3 +104,145 @@ section {
     }
   }
 }
+
+// main text
+.article{
+  padding: 48px;
+  width: 776px;
+  background: #FFFFFF;
+
+  .reviews{
+    /* Reviews */
+    font-family: 'Rajdhani SemiBold';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    /* identical to box height, or 133% */
+    text-transform: capitalize;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #1A1A1A;
+  }
+  title.title{
+    display: block;
+    // 标题内容常规间距 16px
+    margin-bottom: 1rem;
+
+    &.h1{
+      margin: 1rem 0;
+      /* ZimaBoard – Kodi Media Server: Stream Your Favorite Content Hassle-Free */
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 48px;
+      /* or 120% */
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      color: #1A1A1A;
+    }
+    &.h2{
+      /* Part 1. What is ZimaBoard and its features? */
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 40px;
+      /* identical to box height, or 125% */
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      color: #1A1A1A;
+    }
+    &.h3{
+      /* 2. Configuring ZimaBoard for optimal streaming experience */
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 32px;
+      /* or 114% */
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      color: #1A1A1A;
+    }
+    &.h4{
+      /* Network settings and connectivity */
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 30px;
+      /* identical to box height, or 125% */
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      color: #1A1A1A;
+    }
+  }
+
+  .text{
+    margin-bottom: 40px;
+
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    /* or 162% */
+    text-transform: capitalize;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #1A1A1A;
+    .text{
+      margin: 2rem 0;
+    }
+  }
+
+  .img{
+    margin: 2rem 0;
+    width: 100%;
+    height: auto;
+  }
+  .navigation-part{
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+
+
+    .navigation-item{
+      /* Part 1. What is ZimaBoard and its features? */
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 26px;
+      /* identical to box height, or 130% */
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      /* 链接色 */
+      color: #006CD9;
+    }
+    .navigation-item:not(:last-child){
+      margin-bottom: 16px;
+    }
+  }
+
+  .option{
+    li{
+      list-style-type: disc;
+      line-height: 26px;
+    }
+    li:not(:last-child){
+      margin-bottom: 16px;
+    }
+  }
+
+}
+
+// background img
+.background{
+  background-color: #FAFAFA !important;
+  background: url(../images/article/1.jpg) no-repeat;
+  background-size: 100% 480px;
+  background-position: center top;
+}

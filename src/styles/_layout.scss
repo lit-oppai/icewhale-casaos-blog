@@ -18,7 +18,7 @@ body {
   justify-content: center;
   background: hsla(0, 0%, 98%, 1);
 
-  aside {
+  aside.left{
     position: fixed;
     left: 0;
     top: 260px;
@@ -54,6 +54,74 @@ body {
         font-feature-settings: 'pnum' on, 'lnum' on;
 
         color: #1A1A1A;
+      }
+    }
+  }
+
+  aside.right{
+    position: fixed;
+    right: 24px;
+    top: 512px;
+    width: 284px;
+    //height: 100%;
+    background: #FFFFFF;
+    padding: 24px;
+
+    .title{
+      /* Share This Article */
+      font-family: 'Rajdhani';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      /* identical to box height, or 130% */
+      text-transform: capitalize;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      color: #1A1A1A;
+    }
+
+    .icon:not(:last-child){
+      margin-right: 11px;
+    }
+
+    .icon:hover{
+      cursor: pointer;
+      background: #F1B335;
+    }
+
+    .topic{
+      margin-bottom: 8px;
+      /* Odyssey X86J4125 vs ZimaBoard: Which Mini PC Reigns Supreme? */
+      font-family: 'Mulish';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      /* or 133% */
+      text-transform: capitalize;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+
+      color: #1A1A1A;
+      &:hover{
+        text-decoration-line: underline;
+      }
+      .date{
+        /* 06/16/2023 */
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        /* identical to box height, or 171% */
+        text-transform: capitalize;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        text-decoration-line:none;
+
+        color: #666666;
+      }
+      &:not(:last-child){
+        margin-bottom: 16px;
       }
     }
   }

@@ -6,7 +6,8 @@ const paths = require('./paths')
 
 module.exports = {
   // Where webpack looks to start building the bundle
-  entry: [paths.src + '/index.js'],
+  // entry: [paths.src + '/index.js'],
+  entry: [paths.src + '/article.js'],
 
   // Where webpack outputs the assets and bundles
   output: {
@@ -39,8 +40,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'casaos blog',
       favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/template.html', // template file
-      filename: 'index.html', // output file
+      // template: paths.src + '/template.html', // template file
+      template: paths.src + '/article.html', // template file
+      // filename: 'index.html', // output file
+      filename: 'article.html', // output file
       // chunks: ['main'],
       // inject: 'body',
       // scriptLoading: 'blocking',
