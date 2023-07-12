@@ -81,29 +81,29 @@ module.exports = {
   module: {
     rules: [
       // JavaScript: Use Babel to transpile JavaScript files
-      { test: /\.js$/, use: "babel-loader"'] },
+      { test: /\.js$/, use: ['babel-loader'] },
 
       // Images: Copy image files to build folder
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type:"asset/resource"',
+        type: 'asset/resource',
         generator: {
-          filename:"img/[name][hash:8][ext]",
-        ,
+          filename: 'img/[name][hash:8][ext]',
+        },
       },
 
       // Fonts and SVGs: Inline files
       // { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: "asset/resource",
+        type: 'asset/resource',
         generator: {
-          filename: "fonts/[name][hash:8][ext]"
-        }
+          filename: 'fonts/[name][hash:8][ext]',
+        },
       },
 
       // HTML: Copy html files to build folder
-      { test: /\.html$/i, loader: "html-loader" }
+      { test: /\.html$/i, loader: 'html-loader' },
     ],
   },
 
