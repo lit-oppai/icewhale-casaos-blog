@@ -4,8 +4,8 @@
 // Test import of an asset
 // import webpackLogo from '@/images/webpack-logo.svg'
 
-// Test import of styles
-import '@/styles/index.scss'
+// Test import of style
+import '@/style/index.scss'
 
 // Appending to the DOM
 // const logo = document.createElement('img')
@@ -29,10 +29,28 @@ import '@/styles/index.scss'
 // const app = document.querySelector('#root')
 // app.append(homePageDivElement)
 
+// init
+import header from '@/header.html'
+import sidebar from '@/sidebar.html'
+import home from '@/home.html'
+
+const body = document.querySelector('body')
+const headerElement = document.createElement('header')
+const divElement = document.createElement('div')
+const footerElement = document.createElement('footer')
+headerElement.innerHTML = header
+divElement.classList.add('body')
+divElement.innerHTML = sidebar + home
+headerElement.classList.add('header')
+// body.appendChild(headerElement, divElement, footerElement)
+body.appendChild(headerElement)
+body.appendChild(divElement)
+body.appendChild(footerElement)
+
 // import Swiper JS
 import Swiper from 'swiper'
 import { Navigation, Pagination } from 'swiper/modules'
-// import Swiper styles
+// import Swiper style
 import 'swiper/css'
 import 'swiper/css/pagination'
 
