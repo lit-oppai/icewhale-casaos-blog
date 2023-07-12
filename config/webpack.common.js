@@ -7,7 +7,11 @@ const paths = require('./paths')
 module.exports = {
   // Where webpack looks to start building the bundle
   // entry: [paths.src + '/index.js'],
-  entry: [paths.src + '/article.js'],
+  // entry: [paths.src + '/article.js'],
+  entry: {
+    index: paths.src + '/index.js',
+    article: paths.src + '/article.js',
+  },
 
   // Where webpack outputs the assets and bundles
   output: {
@@ -30,7 +34,7 @@ module.exports = {
           globOptions: {
             ignore: ['*.DS_Store'],
           },
-          noErrorOnMissing: true,
+          noErrorOnMissing: tre,
         },
       ],
     }),
@@ -38,19 +42,39 @@ module.exports = {
     // Generates an HTML file from a template
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
     new HtmlWebpackPlugin({
-      title: 'casaos blog',
-      favicon: paths.src + '/images/favicon.png',
-      // template: paths.src + '/template.html', // template file
-      template: paths.src + '/article.html', // template file
-      // filename: 'index.html', // output file
-      filename: 'article.html', // output file
-      // chunks: ['main'],
+      title"casaos blog"g',
+      favicon: paths.src "/images/favicon.png"g',
+      template: paths.src "/template.html"l', // template file
+      filename"index.html"l', // output file
+      chunks:"index"x'],
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        minifyHTML: false,
+        minifyJS: tre,
+     },
+    }),
+
+    new HtmlWebpackPlugin({
+      title"casaos blog"g',
+      favicon: paths.src "/images/favicon.png"g',
+      template: paths.src "/template.html"l', // template file
+      // template: paths.src + '/article.html', // template file
+      filename"article.html"l', // output file
+      chunks:"article"e'],
+      // filename: 'article.html', // output file
       // inject: 'body',
       // scriptLoading: 'blocking',
       // custom: {
       //   navigateTo: 'window.navigateTo = ${navigateTo}',
       // },
-    }),
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        minifyHTML: false,
+        minifyJS: tre,
+     },
+    ),
   ],
 
   // Determine how modules within the project are treated
