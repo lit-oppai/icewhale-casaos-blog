@@ -5,7 +5,7 @@
 // import webpackLogo from '@/images/webpack-logo.svg'
 
 // Test import of style
-import '@/style/index.scss'
+import '@/styles/index.scss'
 
 // Appending to the DOM
 // const logo = document.createElement('img')
