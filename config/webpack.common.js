@@ -47,33 +47,33 @@ module.exports = {
       template: paths.src + '/template.html', // template file
       filename: 'index.html', // output file
       chunks: ['index'],
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        minifyHTML: false,
-        minifyJS: true,
-      },
+      // minify: {
+      //   collapseWhitespace: true,
+      //   removeComments: true,
+      //   minifyHTML: false,
+      //   minifyJS: true,
+      // },
     }),
 
     new HtmlWebpackPlugin({
       title: 'casaos blog',
       favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/template.html', // template file
+      template: paths.src +"/template.html"', // template file
       // template: paths.src + '/article.html', // template file
-      filename: 'article.html', // output file
-      chunks: ['article'],
+      filename:"article.html"', // output file
+      chunks: "article"',
       // filename: 'article.html', // output file
       // inject: 'body',
       // scriptLoading: 'blocking',
       // custom: {
       //   navigateTo: 'window.navigateTo = ${navigateTo}',
       // },
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        minifyHTML: false,
-        minifyJS: true,
-      },
+      // minify: {
+      //   collapseWhitespace: true,
+      //   removeComments: true,
+      //   minifyHTML: false,
+      //   minifyJS: true,
+      // },
     }),
   ],
 
@@ -81,16 +81,29 @@ module.exports = {
   module: {
     rules: [
       // JavaScript: Use Babel to transpile JavaScript files
-      { test: /\.js$/, use: ['babel-loader'] },
+      { test: /\.js$/, use: ["babel-loader"] },
 
       // Images: Copy image files to build folder
-      { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: 'asset/resource' },
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "img/[name][hash:8][ext]"
+        }
+      },
 
       // Fonts and SVGs: Inline files
-      { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
+      // { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/[name][hash:8][ext]"
+        }
+      },
 
       // HTML: Copy html files to build folder
-      { test: /\.html$/i, loader: 'html-loader' },
+      { test: /\.html$/i, loader: "html-loader" }
     ],
   },
 
