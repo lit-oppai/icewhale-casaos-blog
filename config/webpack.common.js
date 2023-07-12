@@ -34,7 +34,7 @@ module.exports = {
           globOptions: {
             ignore: ['*.DS_Store'],
           },
-          noErrorOnMissing: tre,
+          noErrorOnMissing: true,
         },
       ],
     }),
@@ -42,26 +42,26 @@ module.exports = {
     // Generates an HTML file from a template
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
     new HtmlWebpackPlugin({
-      title"casaos blog"g',
-      favicon: paths.src "/images/favicon.png"g',
-      template: paths.src "/template.html"l', // template file
-      filename"index.html"l', // output file
-      chunks:"index"x'],
+      title: 'casaos blog',
+      favicon: paths.src + '/images/favicon.png',
+      template: paths.src + '/template.html', // template file
+      filename: 'index.html', // output file
+      chunks: ['index'],
       minify: {
         collapseWhitespace: true,
         removeComments: true,
         minifyHTML: false,
-        minifyJS: tre,
-     },
+        minifyJS: true,
+      },
     }),
 
     new HtmlWebpackPlugin({
-      title"casaos blog"g',
-      favicon: paths.src "/images/favicon.png"g',
-      template: paths.src "/template.html"l', // template file
+      title: 'casaos blog',
+      favicon: paths.src + '/images/favicon.png',
+      template: paths.src + '/template.html', // template file
       // template: paths.src + '/article.html', // template file
-      filename"article.html"l', // output file
-      chunks:"article"e'],
+      filename: 'article.html', // output file
+      chunks: ['article'],
       // filename: 'article.html', // output file
       // inject: 'body',
       // scriptLoading: 'blocking',
@@ -72,9 +72,9 @@ module.exports = {
         collapseWhitespace: true,
         removeComments: true,
         minifyHTML: false,
-        minifyJS: tre,
-     },
-    ),
+        minifyJS: true,
+      },
+    }),
   ],
 
   // Determine how modules within the project are treated
