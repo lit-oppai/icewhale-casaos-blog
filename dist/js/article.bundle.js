@@ -1,3 +1,9 @@
+"use strict";
+(self["webpackChunkwebpack_boilerplate"] = self["webpackChunkwebpack_boilerplate"] || []).push([[942],{
+
+/***/ 879:
+/***/ (() => {
+
 // Test import of a JavaScript module
 // import { example } from '@/js/example'
 
@@ -5,7 +11,7 @@
 // import webpackLogo from '@/images/webpack-logo.svg'
 
 // Test import of style
-import '@/styles/index.scss'
+
 
 // Appending to the DOM
 // const logo = document.createElement('img')
@@ -47,3 +53,12 @@ import '@/styles/index.scss'
 // body.appendChild(headerElement)
 // body.appendChild(divElement)
 // body.appendChild(footerElement)
+
+/***/ })
+
+},
+/******/ __webpack_require__ => { // webpackRuntimeModules
+/******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+/******/ var __webpack_exports__ = (__webpack_exec__(879));
+/******/ }
+]);

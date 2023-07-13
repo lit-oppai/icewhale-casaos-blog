@@ -30,22 +30,22 @@ import '@/styles/index.scss'
 // app.append(homePageDivElement)
 
 // init
-import header from '@/header.html'
-import sidebar from '@/sidebar.html'
-import home from '@/home.html'
-
-const body = document.querySelector('body')
-const headerElement = document.createElement('header')
-const divElement = document.createElement('div')
-const footerElement = document.createElement('footer')
-headerElement.innerHTML = header
-divElement.classList.add('body')
-divElement.innerHTML = sidebar + home
-headerElement.classList.add('header')
-// body.appendChild(headerElement, divElement, footerElement)
-body.appendChild(headerElement)
-body.appendChild(divElement)
-body.appendChild(footerElement)
+// import header from '@/header.html'
+// import sidebar from '@/sidebar.html'
+// import home from '@/home.html'
+//
+// const body = document.querySelector('body')
+// const headerElement = document.createElement('header')
+// const divElement = document.createElement('div')
+// const footerElement = document.createElement('footer')
+// headerElement.innerHTML = header
+// divElement.classList.add('body')
+// divElement.innerHTML = sidebar + home
+// headerElement.classList.add('header')
+// // body.appendChild(headerElement, divElement, footerElement)
+// body.appendChild(headerElement)
+// body.appendChild(divElement)
+// body.appendChild(footerElement)
 
 // import Swiper JS
 import Swiper from 'swiper'
@@ -54,8 +54,8 @@ import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-const SWIPER = document.querySelector('.swiper')
-const swiper = new Swiper(SWIPER, {
+// const SWIPER = document.querySelector('.swiper')
+const swiper = new Swiper('.swiper', {
   modules: [Navigation, Pagination],
   // Optional parameters
   // direction: 'vertical',

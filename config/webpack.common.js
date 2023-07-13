@@ -44,7 +44,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'casaos blog',
       favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/template.html', // template file
+      template: paths.src + '/index.html', // template file
       filename: 'index.html', // output file
       chunks: ['index'],
       // minify: {
@@ -58,10 +58,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'casaos blog',
       favicon: paths.src + '/images/favicon.png',
-      template: paths.src + '/template.html', // template file
+      template: paths.src + '/article.html', // template file
       // template: paths.src + '/article.html', // template file
       filename: 'article.html', // output file
       chunks: 'article',
+      // inject: false,
       // filename: 'article.html', // output file
       // inject: 'body',
       // scriptLoading: 'blocking',
@@ -86,10 +87,11 @@ module.exports = {
       // Images: Copy image files to build folder
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource',
+        // type: 'asset/resource',
         generator: {
-          filename: 'img/[name][hash:8][ext]',
+          filename: '[path][name][ext]',
         },
+        // use: ['file-loader']
       },
 
       // Fonts and SVGs: Inline files
@@ -98,7 +100,7 @@ module.exports = {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name][hash:8][ext]',
+          filename: 'fonts/[name][ext]',
         },
       },
 
