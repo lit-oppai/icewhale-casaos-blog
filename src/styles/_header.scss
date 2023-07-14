@@ -11,8 +11,17 @@
   z-index: 2;
   box-shadow: 0px 1px 0px 0px hsla(0, 0%, 0%, 0.1);
 
+  .close {
+    display: none !important;
+  }
+
+  .open {
+    display: flex !important;
+  }
+
   .content {
     display: flex;
+    align-items: center;
     width: $content-width;
 
     .nav-item {
@@ -22,5 +31,29 @@
       line-height: 24px;
       margin-right: 20px;
     }
+  }
+}
+
+@media (max-width: 375px) {
+  .header {
+
+    .content {
+      z-index: 3;
+      //display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: white;
+      height: 100vh;
+      width: 45vw;
+    }
+
+    //.searchInput {
+    //  width: 30px;
+    //}
   }
 }

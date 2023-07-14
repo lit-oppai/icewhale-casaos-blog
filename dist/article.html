@@ -1,253 +1,301 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width,initial-scale=1" name="viewport" />
-  <meta content="ie=edge" http-equiv="x-ua-compatible" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title><%= htmlWebpackPlugin.options.title %></title>
-  <link href="/favicon.png" rel="icon">
-  <script defer="defer" src="/js/runtime.bundle.js"></script>
-  <script defer="defer" src="/js/index.bundle.js"></script>
-  <script defer="defer" src="/js/article.bundle.js"></script>
-  <link href="/styles/index.css" rel="stylesheet">
-  <link href="/styles/article.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <link rel="icon" href="/favicon.png">
+    <script defer="defer" src="/js/runtime.bundle.js"></script>
+    <script defer="defer" src="/js/article.bundle.js"></script>
+    <link href="/styles/article.css" rel="stylesheet">
 </head>
-<body class="flex flex-col">
-<header class="header">
-  <div class="content">
-    <div class="nav-item grow-0">Home</div>
-    <div class="nav-item grow-0">ZIMABOARD</div>
-    <div class="nav-item grow-0">CASAOS</div>
-    <div class="nav-item grow-0">DISCORD</div>
-    <div class="nav-item grow-0">SHOP</div>
-    <div class="nav-item grow-0">CONTACT US</div>
-    <div class="nav-item grow"></div>
-    <div class="grow"><i class="fas fa-search" onclick="openSearch()"></i> <input id="searchBox"
-                                                                                  onkeydown="search(event)"
-                                                                                  style="display:none" /></div>
-  </div>
-</header>
-<div class="body background">
-  <aside class="right">
-    <div class="mb-8"><p class="title">Share This Article</p>
-      <div class="flex">
-        <svg class="icon" fill="none" height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
-          <rect fill="#2E2E2E" height="30" width="30" />
-          <path clip-rule="evenodd" d="M15 15L23.4375 10.625V8.4375H6.5625V10.625L15 15ZM6.5625 21.5625V11.7188L15 16.0938L23.4375 11.7188V21.5625H6.5625Z"
-                fill="white"
-                fill-rule="evenodd" />
-        </svg>
-        <svg fill="none" height="30" viewBox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
-          <rect fill="#2E2E2E" height="30" width="30" />
-          <path
-            d="M19.05 11.7684L18.7092 15H16.1261V24.375H12.246V15H10.3125V11.7684H12.246V9.82279C12.246 7.19449 13.339 5.625 16.446 5.625H19.0279V8.85662H17.4121C16.2066 8.85662 16.1261 9.31213 16.1261 10.1537V11.7684H19.05Z"
-            fill="white" />
-        </svg>
-      </div>
+
+<body class="">
+    <header class="header">
+        <div class="grow flex flex-row" id="header-extra"><img class="ml-6" id="header-extra-button"
+                src="/fonts/menu.svg" />
+            <div class="nav-item grow flex justify-center">zimaboard</div>
+        </div>
+        <div class="content" id="header-nav">
+            <div class="nav-item grow-0">Home</div>
+            <div class="nav-item grow-0">ZIMABOARD</div>
+            <div class="nav-item grow-0">CASAOS</div>
+            <div class="nav-item grow-0">DISCORD</div>
+            <div class="nav-item grow-0">SHOP</div>
+            <div class="nav-item grow">CONTACT US</div>
+        </div>
+        <div class="shrink-0 search"><img class="searchIcon mr-6" src="/fonts/search.svg"> <input
+                class="searchInput close" id="searchBox" /></div>
+    </header>
+    <div class="body background">
+        <aside class="right">
+            <div class="mb-8">
+                <p class="title">Share This Article</p>
+                <div class="flex"><svg class="icon" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="30" height="30" />
+                        <path
+                            d="M19.05 11.7684L18.7092 15H16.1261V24.375H12.246V15H10.3125V11.7684H12.246V9.82279C12.246 7.19449 13.339 5.625 16.446 5.625H19.0279V8.85662H17.4121C16.2066 8.85662 16.1261 9.31213 16.1261 10.1537V11.7684H19.05Z"
+                            fill="white" />
+                    </svg> <svg class="icon" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="30" height="30" />
+                        <path
+                            d="M24.375 9.30325C23.6838 9.61012 22.9429 9.81617 22.164 9.90969C22.959 9.43331 23.5698 8.67927 23.8562 7.78203C23.1139 8.22188 22.2883 8.54191 21.4129 8.71434C20.7115 7.96616 19.712 7.5 18.6058 7.5C16.481 7.5 14.7582 9.22142 14.7582 11.3462C14.7582 11.6472 14.7932 11.9409 14.859 12.2229C11.6616 12.0622 8.82818 10.5307 6.92995 8.20289C6.59823 8.7728 6.40972 9.43331 6.40972 10.1377C6.40972 11.4718 7.08777 12.6496 8.12091 13.3408C7.48962 13.3204 6.89634 13.1465 6.37757 12.8586C6.37757 12.8747 6.37757 12.8908 6.37757 12.9068C6.37757 14.7715 7.70444 16.3248 9.46239 16.6799C9.1409 16.7676 8.80042 16.8144 8.4497 16.8144C8.20128 16.8144 7.96016 16.791 7.7249 16.7442C8.21589 18.2713 9.63628 19.3863 11.3182 19.4169C10.0031 20.4486 8.34449 21.0624 6.54124 21.0624C6.22998 21.0624 5.92457 21.0448 5.625 21.0083C7.32596 22.1014 9.3484 22.737 11.5214 22.737C18.597 22.737 22.4665 16.8757 22.4665 11.7933C22.4665 11.6267 22.4622 11.4587 22.4563 11.295C23.2074 10.7529 23.8592 10.0748 24.375 9.30325Z"
+                            fill="white" />
+                    </svg> <svg class="icon" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="30" height="30" />
+                        <path
+                            d="M10.3977 22.5H6.5625V10.9943H10.3977V22.5ZM8.48088 9.46023C7.42006 9.46023 6.5625 8.60037 6.5625 7.54185C6.5625 6.48332 7.42159 5.625 8.48088 5.625C9.53787 5.625 10.3977 6.48486 10.3977 7.54185C10.3977 8.60037 9.53787 9.46023 8.48088 9.46023ZM24.2045 22.5H20.5174V16.9006C20.5174 15.5651 20.492 13.8477 18.6005 13.8477C16.6806 13.8477 16.3853 15.302 16.3853 16.8039V22.5H12.6989V10.9859H16.238V12.5591H16.2879C16.7803 11.654 17.9838 10.6998 19.7787 10.6998C23.5142 10.6998 24.2045 13.0845 24.2045 16.1849V22.5Z"
+                            fill="white" />
+                    </svg> <svg class="icon" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="30" height="30" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M15 15L23.4375 10.625V8.4375H6.5625V10.625L15 15ZM6.5625 21.5625V11.7188L15 16.0938L23.4375 11.7188V21.5625H6.5625Z"
+                            fill="white" />
+                    </svg> <svg class="icon" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="30" height="30" />
+                        <path
+                            d="M16.6447 23.8382C13.906 23.8382 11.8645 22.4288 11.8645 19.058V13.6583H9.375V10.7344C12.1137 10.0234 13.2602 7.66647 13.3916 5.625H16.2355V10.2612H19.5538V13.6594H16.2367V18.3607C16.2367 19.7701 16.9476 20.257 18.0804 20.257H19.6875V23.8393H16.6447V23.8382Z"
+                            fill="white" />
+                    </svg> <svg class="icon" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect width="30" height="30" />
+                        <path
+                            d="M6.86927 13.9575C11.7279 11.8406 14.9678 10.4451 16.5888 9.77083C21.2173 7.84569 22.1791 7.51127 22.8059 7.50011C22.9438 7.4978 23.2521 7.53196 23.4518 7.694C23.6204 7.83081 23.6668 8.01563 23.689 8.14535C23.7112 8.27506 23.7388 8.57056 23.7168 8.80145C23.466 11.4368 22.3807 17.8322 21.8286 20.7839C21.595 22.0328 21.1349 22.4516 20.6896 22.4926C19.7217 22.5816 18.9868 21.8529 18.0494 21.2385C16.5825 20.2769 15.7538 19.6783 14.3299 18.74C12.6844 17.6557 13.7511 17.0597 14.6889 16.0857C14.9343 15.8308 19.1987 11.952 19.2813 11.6001C19.2916 11.5561 19.3012 11.392 19.2037 11.3054C19.1063 11.2188 18.9624 11.2484 18.8587 11.272C18.7115 11.3054 16.3682 12.8542 11.8286 15.9186C11.1635 16.3753 10.561 16.5979 10.0212 16.5862C9.42611 16.5734 8.28141 16.2497 7.43044 15.9731C6.3867 15.6338 5.55715 15.4545 5.62938 14.8783C5.66701 14.5781 6.08031 14.2712 6.86927 13.9575Z"
+                            fill="white" />
+                    </svg></div>
+            </div>
+            <div>
+                <p class="title">Content</p>
+                <p class="topic">LattePanda Review: Alternative of Raspberry Pi <span class="date">01/06/2023</span></p>
+                <p class="topic">Raspberry Pi4 Review: The Ultimate Mini Computer for DIY Projects and More <span
+                        class="date">01/06/2023</span></p>
+                <p class="topic">Odyssey X86J4125 vs ZimaBoard: Which Mini PC Reigns Supreme? <span
+                        class="date">01/06/2023</span></p>
+                <p class="topic">Nano Pi Review: A Comprehensive Analysis of the Compact Single Board Computer <span
+                        class="date">01/06/2023</span></p>
+            </div>
+        </aside>
+        <main class="main article">
+            <p class="reviews">Reviews</p>
+            <title class="title h1">ZimaBoard – Kodi Media Server: Stream Your Favorite Content Hassle-Free</title>
+            <p class="flex article_info items-center mb-6"><img class="w-5 h-5 mr-2" src="/fonts/logo.svg" /> ZimaBoard
+                - 01/06/2023</p>
+            <p class="text">In today’s digital age, home entertainment has evolved significantly. Gone are the days when
+                we were limited to traditional television programming or physical media collections. With the advent of
+                media servers, such as ZimaBoard-Kodi Media Server, we now have the power to transform our homes into
+                personalized entertainment hubs. ZimaBoard, coupled with the versatile Kodi Media Server software,
+                offers a comprehensive solution for streaming and managing our favorite videos, music, and more. <img
+                    src="/images/article/1.jpg" class="img" /> One of the key advantages of ZimaBoard-KODI MEDIA
+                SERVER is the freedom it provides to watch videos anywhere, anytime. With this powerful combination, you
+                no longer need to rely on specific devices or locations to enjoy your favorite content. Whether you’re
+                at home, traveling, or visiting a friend’s house, ZimaBoard-Kodi Media Server enables you to access your
+                media library and watch videos on any compatible device. This convenience and flexibility have
+                revolutionized the way we consume entertainment.</p>
+            <p class="navigation-part"><a class="navigation-item">Part 1. What is ZimaBoard and its features? </a><a
+                    class="navigation-item">Part 2. How to Setting Up ZimaBoard for Kodi Media Server </a><a
+                    class="navigation-item">Part 3. What are the Features of Kodi Media Server </a><a
+                    class="navigation-item">Part 4. Streaming Videos with ZimaBoard-Kodi Media Server</a></p>
+            <title class="title h2">Part 1. What is ZimaBoard and its features?</title>
+            <p class="text">Nowadays, home entertainment has evolved significantly, and ZIMABOARD MEDIA SERVER has
+                emerged as a powerful and versatile media streaming device. Designed to enhance your home entertainment
+                experience, ZimaBoard offers a wide range of features and capabilities that make it an ideal choice for
+                running Kodi Media Server. Whether you’re a movie enthusiast, music lover, or avid gamer, ZimaBoard has
+                the potential to transform your living room into a personalized entertainment hub. <img alt="2"
+                    class="img" src="/images/article/1.jpg" style="height:320px" /></p>
+            <title class="title h2">Part 2. How to Setting Up ZimaBoard for Kodi Media Server</title>
+            <title class="title h3">1. Installing ZimaBoard operating system for seamless performance</title>
+            <p class="text">Nowadays, home entertainment has evolved significantly, and ZIMABOARD MEDIA SERVER has
+                emerged as a powerful and versatile media streaming device. Designed to enhance your home entertainment
+                experience, ZimaBoard offers a wide range of features and capabilities that make it an ideal choice for
+                running Kodi Media Server. Whether you’re a movie enthusiast, music lover, or avid gamer, ZimaBoard has
+                the potential to transform your living room into a personalized entertainment hub. <img alt="2"
+                    class="img" src="/images/article/1.jpg" style="height:320px" /></p>
+            <title class="title h3">2. Configuring ZimaBoard for optimal streaming experience</title>
+            <title class="title h4">Network settings and connectivity</title>
+            <p class="text">Nowadays, home entertainment has evolved significantly, and ZIMABOARD MEDIA SERVER has
+                emerged as a powerful and versatile media streaming device. Designed to enhance your home entertainment
+                experience, ZimaBoard offers a wide range of features and capabilities that make it an ideal choice for
+                running Kodi Media Server. Whether you’re a movie enthusiast, music lover, or avid gamer, ZimaBoard has
+                the potential to transform your living room into a personalized entertainment hub.</p>
+            <title class="title h4">Storage and capacity considerations</title>
+            <p class="text">When setting up ZimaBoard for Kodi Media Server, consider your storage needs and capacity
+                requirements. If you have a large media library, it is recommended to connect external storage devices,
+                such as USB drives or network-attached storage (NAS), to expand the available storage space. This allows
+                you to store and organize your media files efficiently, ensuring quick access and smooth playback.</p>
+            <title class="title h3">3. How to Install Kodi on ZimaBoard</title>
+            <p class="text">Step-by-step guide to installing Kodi on ZimaBoard. Installing Kodi on ZimaBoard is a
+                straightforward process. Here is a step-by-step guide to help you get started: <img alt="2" class="img"
+                    src="/images/article/1.jpg" style="height:320px" /></p>
+            <ul class="option">
+                <li>Visit the official Kodi website and download the appropriate version of Kodi for your ZimaBoard’s
+                    operating system – CasaOS.</li>
+                <li>Follow the installation instructions provided by Kodi for your specific operating system.</li>
+                <li>Launch Kodi and go through the initial setup process, which includes configuring language
+                    preferences, enabling or disabling add-ons, and setting up media sources.</li>
+                <li>Compatibility and version considerations</li>
+                <li>Ensure that you download the correct version of Kodi that is compatible with your ZimaBoard’s
+                    operating system. Check the Kodi website or community forums for information on the recommended
+                    version for your specific OS version.</li>
+            </ul>
+            <p class="text">It is also important to keep Kodi up to date by regularly checking for software updates. New
+                versions often bring performance improvements, bug fixes, and additional features that enhance your
+                streaming experience on ZimaBoard.</p>By following the hardware requirements, installing the appropriate
+            operating system, configuring network settings and storage options, and installing Kodi correctly, you can
+            set up ZimaBoard for Kodi Media Server and unlock a world of limitless entertainment possibilities.<p></p>
+            <title class="title h2">Part 3. What are the Features of Kodi Media Server</title>
+            <p class="text">Kodi is a powerful and versatile media server platform that allows you to transform your
+                ZimaBoard into a feature-rich entertainment hub. With its open-source nature and a vast community of
+                developers, Kodi offers an extensive range of features and customization options to enhance your video
+                streaming experience.</p>
+            <title class="title h3">1. Benefits of using Kodi for video streaming</title>
+            <title class="title h4">Extensive media format suppor</title>
+            <p class="text">One of the major advantages of Kodi is its ability to handle a wide range of media formats.
+                Whether you have a collection of high-definition movies, TV shows, music files, or even personal home
+                videos, Kodi can seamlessly play them without any compatibility issues.</p>
+            <title class="title h4">Customizable user interface</title>
+            <p class="text">Kodi provides a highly customizable user interface that allows you to personalize the look
+                and feel of your media server. You can choose from various skins and themes to match your preferences
+                and create a visually appealing and user-friendly interface.</p>
+            <title class="title h4">Integration with popular streaming services</title>
+            <p class="text">Kodi integrates with popular streaming services, allowing you to access a vast array of
+                online content directly from the platform. By installing addons or plugins, you can stream content from
+                platforms like Netflix, Hulu, Amazon Prime Video, and more, providing you with a centralized hub for all
+                your streaming needs.</p>
+            <title class="title h3">2. Managing Media Libraries in Kodi</title>
+            <title class="title h4">Extensive media format suppor</title>
+            <p class="text">One of the major advantages of Kodi is its ability to handle a wide range of media formats.
+                Whether you have a collection of high-definition movies, TV shows, music files, or even personal home
+                videos, Kodi can seamlessly play them without any compatibility issues.</p>
+            <title class="title h4">Organizing media files and folders</title>
+            <p class="text">Kodi offers comprehensive tools for organizing your media files and folders. You can create
+                custom directories for different types of media, such as movies, TV shows, music albums, and photos,
+                ensuring easy access and navigation through your media library. <img class="img"
+                    src="/images/article/1.jpg" style="height:320px" /></p>
+            <title class="title h4">Utilizing metadata for enhanced media browsing</title>
+            <p class="text">Kodi leverages metadata to enhance the browsing experience within your media library. By
+                automatically retrieving information like movie or TV show descriptions, episode details, cover art, and
+                actor information, Kodi creates a visually appealing and informative library interface.</p>
+            <title class="title h4">Adding and updating media sources</title>
+            <p class="text">With Kodi, adding and updating media sources is a breeze. You can easily add local or
+                networked storage locations as media sources, allowing Kodi to scan and index your media files
+                automatically. This ensures that your library stays up to date with new additions or changes to your
+                media collection. <img class="img" src="/images/article/1.jpg" style="height:320px" /></p>
+            <title class="title h3">3. Exploring Kodi Addons for Enhanced Media Content</title>
+            <title class="title h4">Kodi addons and their functionality</title>
+            <p class="text">Kodi addons are additional modules that extend the functionality of the media server. Addons
+                offer a wide range of features, such as access to online streaming services, live TV integration,
+                subtitle support, weather information, and much more.</p>
+            <title class="title h4">Popular Kodi addons for diverse media content</title>
+            <p class="text">Kodi provides a vast library of addons that cater to different interests and preferences.
+                From addons that focus on movies and TV shows to addons for sports, music, documentaries, and even
+                gaming, you can find a variety of options to enhance your media content.</p>
+            <title class="title h4">Installing and configuring addons for optimal performance</title>
+            <p class="text">Installing addons in Kodi is a straightforward process. You can browse and install addons
+                directly from the official Kodi addon repository or other trusted sources. Once installed, you can
+                configure addons to suit your preferences, such as selecting preferred streaming sources, customizing
+                playback settings, and enabling additional features. <img class="img" src="/images/article/1.jpg"
+                    style="height:320px" /> By exploring the features of Kodi Media Server, you can unlock the full
+                potential of ZimaBoard as a home entertainment powerhouse. From its extensive media format support to
+                customizable user interfaces, Kodi provides a seamless and immersive streaming experience. With tools
+                for managing media libraries and a wide range of addons, you can curate and access a diverse selection
+                of content with ease. Install Kodi on your ZimaBoard and elevate your home entertainment to new heights.
+            </p>
+            <title class="title h2">Part 4. Streaming Videos with ZimaBoard-Kodi Media Server</title>
+            <title class="title h3">1. Accessing and streaming media content on ZimaBoard</title>
+            <title class="title h4">Connecting ZimaBoard to the desired display or device</title>
+            <p class="text">Once you have set up ZimaBoard with Kodi Media Server, you can easily connect it to your
+                desired display or device for streaming videos. Whether you prefer a high-definition TV, a projector, or
+                even a computer monitor, ZimaBoard provides versatile connectivity options to ensure seamless playback.
+            </p>
+            <p class="text">To connect ZimaBoard to your display, simply use an HDMI cable to connect the HDMI port on
+                ZimaBoard to the HDMI input on your display device. Make sure to choose the appropriate HDMI input on
+                your TV or monitor to view the ZimaBoard interface.</p>
+            <p></p>
+            <title class="title h4">Navigating Kodi’s user interface for seamless browsing</title>
+            <p class="text">After connecting ZimaBoard to your display, you can start navigating Kodi’s user-friendly
+                interface for effortless browsing of your media content. Kodi offers a visually appealing and intuitive
+                interface that allows you to easily access and navigate through your media libraries.</p>
+            <p class="text">Using the remote control or keyboard connected to ZimaBoard, you can navigate through the
+                various sections of Kodi, such as Movies, TV Shows, Music, Pictures, and Add-ons. Within each section,
+                you can further explore subcategories, search for specific titles, and access your media files with just
+                a few clicks.</p>
+            <p></p>
+            <title class="title h3">2. Utilizing Remote Control and Mobile Apps</title>
+            <title class="title h4">Controlling ZimaBoard-Kodi Media Server through remote control</title>
+            <p class="text">ZimaBoard can be conveniently controlled using a dedicated remote control, which provides
+                easy access to Kodi’s functionalities. The remote control allows you to navigate through menus, select
+                media files, control playback, and adjust settings without the need for a separate keyboard or mouse.
+                <img class="img" src="/images/article/1.jpg" style="height:320px" /></p>
+            <p class="text">With the remote control, you can pause, play, fast forward, rewind, and adjust volume with
+                ease. It provides a seamless and immersive media streaming experience, bringing the convenience of
+                traditional TV remote controls to your ZimaBoard-Kodi setup.</p>
+            <p></p>
+            <title class="title h4">Using mobile apps for remote access and control</title>
+            <p class="text">ZimaBoard can be conveniently controlled using a dedicated remote control, which provides
+                easy access to Kodi’s functionalities. The remote control allows you to navigate through menus, select
+                media files, control playback, and adjust settings without the need for a separate keyboard or mouse.
+            </p>
+            <p class="text">These mobile apps provide a convenient way to browse your media libraries, select and play
+                videos, adjust settings, and even stream content from your ZimaBoard to your mobile device. With the
+                mobile app, you can have complete control over your media server from anywhere within your home network.
+            </p>
+            <p class="text">By utilizing the remote control or mobile apps, you can enhance your streaming experience
+                with ZimaBoard-Kodi Media Server. Whether you prefer the simplicity of a dedicated remote control or the
+                flexibility of mobile control, ZimaBoard offers versatile options to suit your preferences. Enjoy the
+                convenience of accessing and controlling your media content with ease, all from the comfort of your
+                couch or even when you’re on the go.</p>
+            <p></p>
+            <title class="title h4">Final Verdict:</title>
+            <p class="text">ZimaBoard combined with Kodi Media Server offers a powerful and versatile solution for
+                creating a comprehensive home entertainment system. With ZimaBoard’s exceptional hardware capabilities
+                and Kodi’s robust media management and playback features, you can transform your living room into a
+                personalized media hub.</p>
+            <section id="content6" class="mb-12">
+                <div class="flex justify-between headline mb-4 items-center">
+                    <div class="title">Related Post</div><button class="operation">View All</button>
+                </div>
+                <div class="flex justify-between">
+                    <div class="card"><img alt="" class="topic" src="/images/media_servers/1.png" />
+                        <div class="copywriters p-4">
+                            <p class="pre_title">Reviews</p>
+                            <p class="title my-2 line-clamp-2 text-ellipsis">Top 10 Media Servers for Home Use In 2023
+                            </p>
+                            <p class="flex author items-center"><img class="w-5 h-5 mr-2" src="/fonts/logo.svg" />
+                                ZimaBoard - 01/06/2023</p>
+                        </div>
+                    </div>
+                    <div class="card"><img alt="" class="w-72 h-41" src="/images/media_servers/2.png" />
+                        <div class="copywriters p-4">
+                            <p class="pre_title">Reviews</p>
+                            <p class="title my-2 line-clamp-2 text-ellipsis">How to Choose and Setup a Media Server for
+                                Home</p>
+                            <p class="flex author items-center"><img class="w-5 h-5 mr-2" src="/fonts/logo.svg" />
+                                ZimaBoard - 01/06/2023</p>
+                        </div>
+                    </div>
+                    <div class="card"><img alt="" class="w-72 h-41" src="/images/media_servers/3.png" />
+                        <div class="copywriters p-4">
+                            <p class="pre_title">Reviews</p>
+                            <p class="title my-2 line-clamp-2 text-ellipsis">How to Set Up a Media Server with Plex</p>
+                            <p class="flex author items-center"><img class="w-5 h-5 mr-2" src="/fonts/logo.svg" />
+                                ZimaBoard - 01/06/2023</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-    <div><p class="title">Content</p>
-      <p class="topic">LattePanda Review: Alternative of Raspberry Pi <span class="date">01/06/2023</span></p>
-      <p class="topic">Raspberry Pi4 Review: The Ultimate Mini Computer for DIY Projects and More <span class="date">01/06/2023</span>
-      </p>
-      <p class="topic">Odyssey X86J4125 vs ZimaBoard: Which Mini PC Reigns Supreme? <span class="date">01/06/2023</span>
-      </p>
-      <p class="topic">Nano Pi Review: A Comprehensive Analysis of the Compact Single Board Computer <span class="date">01/06/2023</span>
-      </p></div>
-  </aside>
-  <main class="main article"><p class="reviews">Reviews</p><title class="title h1">ZimaBoard – Kodi Media Server: Stream
-    Your Favorite Content Hassle-Free</title>
-    <p class="flex article_info items-center mb-6"><img class="w-5 h-5 mr-2" src="/fonts/logo.svg" /> ZimaBoard -
-      01/06/2023</p>
-    <p class="text">In today’s digital age, home entertainment has evolved significantly. Gone are the days when we were
-      limited to traditional television programming or physical media collections. With the advent of media servers,
-      such as ZimaBoard-Kodi Media Server, we now have the power to transform our homes into personalized entertainment
-      hubs. ZimaBoard, coupled with the versatile Kodi Media Server software, offers a comprehensive solution for
-      streaming and managing our favorite videos, music, and more. <img class="img" src="/images/article/1.jpg" /> One
-      of the key advantages of ZimaBoard-KODI MEDIA SERVER is the freedom it provides to watch videos anywhere, anytime.
-      With this powerful combination, you no longer need to rely on specific devices or locations to enjoy your favorite
-      content. Whether you’re at home, traveling, or visiting a friend’s house, ZimaBoard-Kodi Media Server enables you
-      to access your media library and watch videos on any compatible device. This convenience and flexibility have
-      revolutionized the way we consume entertainment.</p>
-    <p class="navigation-part"><a class="navigation-item">Part 1. What is ZimaBoard and its features? </a><a
-      class="navigation-item">Part 2. How to Setting Up ZimaBoard for Kodi Media Server </a><a class="navigation-item">Part
-      3. What are the Features of Kodi Media Server </a><a class="navigation-item">Part 4. Streaming Videos with
-      ZimaBoard-Kodi Media Server</a></p><title class="title h2">Part 1. What is ZimaBoard and its features?</title>
-    <p class="text">Nowadays, home entertainment has evolved significantly, and ZIMABOARD MEDIA SERVER has emerged as a
-      powerful and versatile media streaming device. Designed to enhance your home entertainment experience, ZimaBoard
-      offers a wide range of features and capabilities that make it an ideal choice for running Kodi Media Server.
-      Whether you’re a movie enthusiast, music lover, or avid gamer, ZimaBoard has the potential to transform your
-      living room into a personalized entertainment hub. <img alt="2" class="img" src="/images/article/1.jpg"
-                                                              style="height:320px" /></p><title class="title h2">Part 2.
-      How to Setting Up ZimaBoard for Kodi Media Server</title><title class="title h3">1. Installing ZimaBoard operating
-      system for seamless performance</title>
-    <p class="text">Nowadays, home entertainment has evolved significantly, and ZIMABOARD MEDIA SERVER has emerged as a
-      powerful and versatile media streaming device. Designed to enhance your home entertainment experience, ZimaBoard
-      offers a wide range of features and capabilities that make it an ideal choice for running Kodi Media Server.
-      Whether you’re a movie enthusiast, music lover, or avid gamer, ZimaBoard has the potential to transform your
-      living room into a personalized entertainment hub. <img alt="2" class="img" src="/images/article/1.jpg"
-                                                              style="height:320px" /></p><title class="title h3">2.
-      Configuring ZimaBoard for optimal streaming experience</title><title class="title h4">Network settings and
-      connectivity</title>
-    <p class="text">Nowadays, home entertainment has evolved significantly, and ZIMABOARD MEDIA SERVER has emerged as a
-      powerful and versatile media streaming device. Designed to enhance your home entertainment experience, ZimaBoard
-      offers a wide range of features and capabilities that make it an ideal choice for running Kodi Media Server.
-      Whether you’re a movie enthusiast, music lover, or avid gamer, ZimaBoard has the potential to transform your
-      living room into a personalized entertainment hub.</p><title class="title h4">Storage and capacity
-      considerations</title>
-    <p class="text">When setting up ZimaBoard for Kodi Media Server, consider your storage needs and capacity
-      requirements. If you have a large media library, it is recommended to connect external storage devices, such as
-      USB drives or network-attached storage (NAS), to expand the available storage space. This allows you to store and
-      organize your media files efficiently, ensuring quick access and smooth playback.</p><title class="title h3">3.
-      How to Install Kodi on ZimaBoard</title>
-    <p class="text">Step-by-step guide to installing Kodi on ZimaBoard. Installing Kodi on ZimaBoard is a
-      straightforward process. Here is a step-by-step guide to help you get started: <img alt="2" class="img"
-                                                                                          src="/images/article/1.jpg"
-                                                                                          style="height:320px" /></p>
-    <ul class="option">
-      <li>Visit the official Kodi website and download the appropriate version of Kodi for your ZimaBoard’s operating
-        system – CasaOS.
-      </li>
-      <li>Follow the installation instructions provided by Kodi for your specific operating system.</li>
-      <li>Launch Kodi and go through the initial setup process, which includes configuring language preferences,
-        enabling or disabling add-ons, and setting up media sources.
-      </li>
-      <li>Compatibility and version considerations</li>
-      <li>Ensure that you download the correct version of Kodi that is compatible with your ZimaBoard’s operating
-        system. Check the Kodi website or community forums for information on the recommended version for your specific
-        OS version.
-      </li>
-    </ul>
-    <p class="text">It is also important to keep Kodi up to date by regularly checking for software updates. New
-      versions often bring performance improvements, bug fixes, and additional features that enhance your streaming
-      experience on ZimaBoard.</p>By following the hardware requirements, installing the appropriate operating system,
-    configuring network settings and storage options, and installing Kodi correctly, you can set up ZimaBoard for Kodi
-    Media Server and unlock a world of limitless entertainment possibilities.<p></p><title class="title h2">Part 3. What
-      are the Features of Kodi Media Server</title>
-    <p class="text">Kodi is a powerful and versatile media server platform that allows you to transform your ZimaBoard
-      into a feature-rich entertainment hub. With its open-source nature and a vast community of developers, Kodi offers
-      an extensive range of features and customization options to enhance your video streaming experience.</p><title
-      class="title h3">1. Benefits of using Kodi for video streaming</title><title class="title h4">Extensive media
-      format suppor</title>
-    <p class="text">One of the major advantages of Kodi is its ability to handle a wide range of media formats. Whether
-      you have a collection of high-definition movies, TV shows, music files, or even personal home videos, Kodi can
-      seamlessly play them without any compatibility issues.</p><title class="title h4">Customizable user
-      interface</title>
-    <p class="text">Kodi provides a highly customizable user interface that allows you to personalize the look and feel
-      of your media server. You can choose from various skins and themes to match your preferences and create a visually
-      appealing and user-friendly interface.</p><title class="title h4">Integration with popular streaming
-      services</title>
-    <p class="text">Kodi integrates with popular streaming services, allowing you to access a vast array of online
-      content directly from the platform. By installing addons or plugins, you can stream content from platforms like
-      Netflix, Hulu, Amazon Prime Video, and more, providing you with a centralized hub for all your streaming
-      needs.</p><title class="title h3">2. Managing Media Libraries in Kodi</title><title class="title h4">Extensive
-      media format suppor</title>
-    <p class="text">One of the major advantages of Kodi is its ability to handle a wide range of media formats. Whether
-      you have a collection of high-definition movies, TV shows, music files, or even personal home videos, Kodi can
-      seamlessly play them without any compatibility issues.</p><title class="title h4">Organizing media files and
-      folders</title>
-    <p class="text">Kodi offers comprehensive tools for organizing your media files and folders. You can create custom
-      directories for different types of media, such as movies, TV shows, music albums, and photos, ensuring easy access
-      and navigation through your media library. <img class="img" src="/images/article/1.jpg" style="height:320px" />
-    </p><title class="title h4">Utilizing metadata for enhanced media browsing</title>
-    <p class="text">Kodi leverages metadata to enhance the browsing experience within your media library. By
-      automatically retrieving information like movie or TV show descriptions, episode details, cover art, and actor
-      information, Kodi creates a visually appealing and informative library interface.</p><title class="title h4">
-      Adding and updating media sources</title>
-    <p class="text">With Kodi, adding and updating media sources is a breeze. You can easily add local or networked
-      storage locations as media sources, allowing Kodi to scan and index your media files automatically. This ensures
-      that your library stays up to date with new additions or changes to your media collection. <img class="img"
-                                                                                                      src="/images/article/1.jpg"
-                                                                                                      style="height:320px" />
-    </p><title class="title h3">3. Exploring Kodi Addons for Enhanced Media Content</title><title class="title h4">Kodi
-      addons and their functionality</title>
-    <p class="text">Kodi addons are additional modules that extend the functionality of the media server. Addons offer a
-      wide range of features, such as access to online streaming services, live TV integration, subtitle support,
-      weather information, and much more.</p><title class="title h4">Popular Kodi addons for diverse media
-      content</title>
-    <p class="text">Kodi provides a vast library of addons that cater to different interests and preferences. From
-      addons that focus on movies and TV shows to addons for sports, music, documentaries, and even gaming, you can find
-      a variety of options to enhance your media content.</p><title class="title h4">Installing and configuring addons
-      for optimal performance</title>
-    <p class="text">Installing addons in Kodi is a straightforward process. You can browse and install addons directly
-      from the official Kodi addon repository or other trusted sources. Once installed, you can configure addons to suit
-      your preferences, such as selecting preferred streaming sources, customizing playback settings, and enabling
-      additional features. <img class="img" src="/images/article/1.jpg" style="height:320px" /> By exploring the
-      features of Kodi Media Server, you can unlock the full potential of ZimaBoard as a home entertainment powerhouse.
-      From its extensive media format support to customizable user interfaces, Kodi provides a seamless and immersive
-      streaming experience. With tools for managing media libraries and a wide range of addons, you can curate and
-      access a diverse selection of content with ease. Install Kodi on your ZimaBoard and elevate your home
-      entertainment to new heights.</p><title class="title h2">Part 4. Streaming Videos with ZimaBoard-Kodi Media
-      Server</title><title class="title h3">1. Accessing and streaming media content on ZimaBoard</title><title
-      class="title h4">Connecting ZimaBoard to the desired display or device</title>
-    <p class="text">Once you have set up ZimaBoard with Kodi Media Server, you can easily connect it to your desired
-      display or device for streaming videos. Whether you prefer a high-definition TV, a projector, or even a computer
-      monitor, ZimaBoard provides versatile connectivity options to ensure seamless playback.</p>
-    <p class="text">To connect ZimaBoard to your display, simply use an HDMI cable to connect the HDMI port on ZimaBoard
-      to the HDMI input on your display device. Make sure to choose the appropriate HDMI input on your TV or monitor to
-      view the ZimaBoard interface.</p>
-    <p></p><title class="title h4">Navigating Kodi’s user interface for seamless browsing</title>
-    <p class="text">After connecting ZimaBoard to your display, you can start navigating Kodi’s user-friendly interface
-      for effortless browsing of your media content. Kodi offers a visually appealing and intuitive interface that
-      allows you to easily access and navigate through your media libraries.</p>
-    <p class="text">Using the remote control or keyboard connected to ZimaBoard, you can navigate through the various
-      sections of Kodi, such as Movies, TV Shows, Music, Pictures, and Add-ons. Within each section, you can further
-      explore subcategories, search for specific titles, and access your media files with just a few clicks.</p>
-    <p></p><title class="title h3">2. Utilizing Remote Control and Mobile Apps</title><title class="title h4">
-      Controlling ZimaBoard-Kodi Media Server through remote control</title>
-    <p class="text">ZimaBoard can be conveniently controlled using a dedicated remote control, which provides easy
-      access to Kodi’s functionalities. The remote control allows you to navigate through menus, select media files,
-      control playback, and adjust settings without the need for a separate keyboard or mouse. <img class="img"
-                                                                                                    src="/images/article/1.jpg"
-                                                                                                    style="height:320px" />
-    </p>
-    <p class="text">With the remote control, you can pause, play, fast forward, rewind, and adjust volume with ease. It
-      provides a seamless and immersive media streaming experience, bringing the convenience of traditional TV remote
-      controls to your ZimaBoard-Kodi setup.</p>
-    <p></p><title class="title h4">Using mobile apps for remote access and control</title>
-    <p class="text">ZimaBoard can be conveniently controlled using a dedicated remote control, which provides easy
-      access to Kodi’s functionalities. The remote control allows you to navigate through menus, select media files,
-      control playback, and adjust settings without the need for a separate keyboard or mouse.</p>
-    <p class="text">These mobile apps provide a convenient way to browse your media libraries, select and play videos,
-      adjust settings, and even stream content from your ZimaBoard to your mobile device. With the mobile app, you can
-      have complete control over your media server from anywhere within your home network.</p>
-    <p class="text">By utilizing the remote control or mobile apps, you can enhance your streaming experience with
-      ZimaBoard-Kodi Media Server. Whether you prefer the simplicity of a dedicated remote control or the flexibility of
-      mobile control, ZimaBoard offers versatile options to suit your preferences. Enjoy the convenience of accessing
-      and controlling your media content with ease, all from the comfort of your couch or even when you’re on the
-      go.</p>
-    <p></p><title class="title h4">Final Verdict:</title>
-    <p class="text">ZimaBoard combined with Kodi Media Server offers a powerful and versatile solution for creating a
-      comprehensive home entertainment system. With ZimaBoard’s exceptional hardware capabilities and Kodi’s robust
-      media management and playback features, you can transform your living room into a personalized media hub.</p>
-    <section class="mb-12" id="content6">
-      <div class="flex justify-between headline mb-4 items-center">
-        <div class="title">Related Post</div>
-        <button class="operation">View All</button>
-      </div>
-      <div class="flex justify-between">
-        <div class="card"><img alt="" class="w-72 h-41" src="/images/media_servers/1.png" />
-          <div class="copywriters p-4"><p class="pre_title">Reviews</p>
-            <p class="title my-2 line-clamp-2 text-ellipsis">Top 10 Media Servers for Home Use In 2023</p>
-            <p class="flex author items-center"><img class="w-5 h-5 mr-2" src="/fonts/logo.svg" /> ZimaBoard -
-              01/06/2023</p></div>
-        </div>
-        <div class="card"><img alt="" class="w-72 h-41" src="/images/media_servers/2.png" />
-          <div class="copywriters p-4"><p class="pre_title">Reviews</p>
-            <p class="title my-2 line-clamp-2 text-ellipsis">How to Choose and Setup a Media Server for Home</p>
-            <p class="flex author items-center"><img class="w-5 h-5 mr-2" src="/fonts/logo.svg" /> ZimaBoard -
-              01/06/2023</p></div>
-        </div>
-        <div class="card"><img alt="" class="w-72 h-41" src="/images/media_servers/3.png" />
-          <div class="copywriters p-4"><p class="pre_title">Reviews</p>
-            <p class="title my-2 line-clamp-2 text-ellipsis">How to Set Up a Media Server with Plex</p>
-            <p class="flex author items-center"><img class="w-5 h-5 mr-2" src="/fonts/logo.svg" /> ZimaBoard -
-              01/06/2023</p></div>
-        </div>
-      </div>
-    </section>
-  </main>
-</div>
-<footer></footer>
+    <footer></footer>
 </body>
+
 </html>

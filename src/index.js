@@ -101,6 +101,9 @@ const swiper = new Swiper('.swiper', {
 // })
 
 function activateDirectory() {
+  if (screen.width < 1440) {
+    return
+  }
   const contentId = getCurrentContentId()
   document.querySelector(`[data-content-id = "${contentId}"]`).classList.add('active')
 
@@ -149,4 +152,47 @@ document.querySelectorAll('.content-ref').forEach((item) => {
     })
     activateDirectory()
   })
+})
+
+//init header
+if (screen.width <= 375) {
+  const headerNav = document.querySelector('#header-nav')
+  headerNav.classList.add('close')
+  // add event listener
+  const headerNavButton = document.querySelector('#header-extra-button')
+  headerNavButton.addEventListener('click', () => {
+    headerNav.classList.remove('close')
+    headerNav.classList.add('open')
+  })
+  // global click event
+  document.addEventListener('click', (e) => {
+    // close menu
+    if (!e.target.closest('#header-extra-button') && !e.target.closest('#header-nav')) {
+      headerNav.classList.add('close')
+      headerNav.classList.remove('open')
+    }
+  })
+} else {
+  const headerNav = document.querySelector('#header-extra')
+  headerNav.classList.add('close')
+}
+
+// init search
+document.querySelector('.searchIcon').addEventListener('click', (e) => {
+  const ICON = document.querySelector('.searchIcon')
+  const INPUT = document.querySelector('.searchInput')
+  ICON.classList.add('close')
+  INPUT.classList.remove('close')
+  INPUT.focus()
+})
+
+// global click event
+document.addEventListener('click', (e) => {
+  // close search
+  const ICON = document.querySelector('.searchIcon')
+  const INPUT = document.querySelector('.searchInput')
+  if (!e.target.closest('.searchInput') && !e.target.closest('.searchIcon')) {
+    ICON.classList.remove('close')
+    INPUT.classList.add('close')
+  }
 })

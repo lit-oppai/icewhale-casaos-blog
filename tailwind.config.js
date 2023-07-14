@@ -1,6 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 module.exports = {
-  purge: ['src/*.html'],
+  content: ['**.{html,js}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -10,4 +10,3 @@ module.exports = {
   },
   plugins: [],
 }
-

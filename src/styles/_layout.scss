@@ -1,10 +1,3 @@
-/*
-.content {
-  display: flex;
-  width: 898px;
-  background-color: antiquewhite;
-}*/
-
 body {
   height: 100%;
 }
@@ -12,13 +5,13 @@ body {
 .body {
   //flex-direction: column;
   width: 100vw;
-  //height: calc(100vh - 60px);
-  padding-top: 108px;
+  //padding-top: 108px;
+  margin-top: 60px;
   display: flex;
   justify-content: center;
   background: hsla(0, 0%, 98%, 1);
 
-  aside.left{
+  aside.left {
     position: fixed;
     left: 0;
     top: 260px;
@@ -58,16 +51,15 @@ body {
     }
   }
 
-  aside.right{
+  aside.right {
     position: fixed;
-    right: 24px;
-    top: 512px;
-    width: 284px;
-    //height: 100%;
+    right: 1.5rem;
+    top: 32rem;
+    width: 17.75rem;
     background: #FFFFFF;
-    padding: 24px;
+    padding: 1.5rem;
 
-    .title{
+    .title {
       /* Share This Article */
       font-family: 'Rajdhani';
       font-style: normal;
@@ -81,16 +73,20 @@ body {
       color: #1A1A1A;
     }
 
-    .icon:not(:last-child){
-      margin-right: 11px;
+    .icon {
+      background-color: #2E2E2E;
+
+      &:not(:last-child) {
+        margin-right: 0.69rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: #F1B335;
+      }
     }
 
-    .icon:hover{
-      cursor: pointer;
-      background: #F1B335;
-    }
-
-    .topic{
+    .topic {
       margin-bottom: 8px;
       /* Odyssey X86J4125 vs ZimaBoard: Which Mini PC Reigns Supreme? */
       font-family: 'Mulish';
@@ -103,10 +99,12 @@ body {
       font-feature-settings: 'pnum' on, 'lnum' on;
 
       color: #1A1A1A;
-      &:hover{
+
+      &:hover {
         text-decoration-line: underline;
       }
-      .date{
+
+      .date {
         /* 06/16/2023 */
         font-family: 'Mulish';
         font-style: normal;
@@ -116,20 +114,29 @@ body {
         /* identical to box height, or 171% */
         text-transform: capitalize;
         font-feature-settings: 'pnum' on, 'lnum' on;
-        text-decoration-line:none;
+        text-decoration-line: none;
 
         color: #666666;
       }
-      &:not(:last-child){
+
+      &:not(:last-child) {
         margin-bottom: 16px;
       }
     }
   }
 
+  @media (max-width: 1440px) {
+    aside {
+      display: none;
+    }
+  }
+
   .feature-article {
     background: hsla(0, 0%, 2%, 1);
-    width: 896px;
-    height: 600px;
+    //width: 896px;
+    //height: 600px;
+    width: 100%;
+    height: 100%;
 
     .bgImgSrc1 {
       background-image: url("../images/AD_blocker/1.png");
@@ -143,7 +150,7 @@ body {
       background-size: 100% 100%;
       width: 424px;
       height: 568px;
-
+      padding: 2.5rem;
 
       .article_tag {
         /* Personal NAS */
@@ -187,12 +194,30 @@ body {
         color: #FFFFFF;
       }
     }
+
+    @media (max-width: 375px) {
+      .bgImg:not(:first-child) {
+        display: none;
+      }
+      .bgImg {
+        padding: 2rem;
+        width: 327px;
+        height: 438px;
+      }
+    }
   }
 
   .slideshow-article {
     .swiper {
       height: 504px;
       width: 896px;
+    }
+
+    @media (max-width: 375px) {
+      .swiper {
+        height: 184px;
+        width: $mobile-content-width;
+      }
     }
 
     .swiper-button-next, .swiper-button-prev {
@@ -227,8 +252,10 @@ body {
 
     .bgImg {
       background-size: 100% 100%;
-      height: 504px;
-      width: 896px;
+      height: 100%;
+      width: 100%;
+      padding: 2rem;
+
 
       .article_tag {
         /* Latest News */
@@ -245,18 +272,20 @@ body {
         color: #FFFFFF;
       }
 
-      .article_title {
-        /* ZimaBoard Prime Discount Day -14th Of Each Month */
-        font-family: 'Rajdhani';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 28px;
-        line-height: 32px;
-        /* identical to box height, or 114% */
-        font-feature-settings: 'pnum' on, 'lnum' on;
+      @media (min-width: 376px) {
+        .article_title {
+          /* ZimaBoard Prime Discount Day -14th Of Each Month */
+          font-family: 'Rajdhani';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 28px;
+          line-height: 32px;
+          /* identical to box height, or 114% */
+          font-feature-settings: 'pnum' on, 'lnum' on;
 
-        /* Basic/White */
-        color: #FFFFFF;
+          /* Basic/White */
+          color: #FFFFFF;
+        }
       }
 
       .article_info {
@@ -273,6 +302,26 @@ body {
         color: #FFFFFF;
       }
     }
+
+    @media (max-width: 375px) {
+      .bgImg {
+        padding: 1rem;
+      }
+
+      .article_title {
+        /* ZimaBoard Prime Discount Day -14th Of Each Month */
+        font-family: 'Rajdhani';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        /* or 130% */
+        font-feature-settings: 'pnum' on, 'lnum' on;
+
+        /* Basic/White */
+        color: #FFFFFF;
+      }
+    }
   }
 }
 
@@ -280,4 +329,7 @@ footer {
   width: 100%;
   height: 448px;
   background: #101010;
+  @media (max-width: 375px) {
+    height: 412px;
+  }
 }

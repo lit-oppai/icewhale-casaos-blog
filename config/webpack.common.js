@@ -47,6 +47,7 @@ module.exports = {
       template: paths.src + '/index.html', // template file
       filename: 'index.html', // output file
       chunks: ['index'],
+      // inject: false,
       // minify: {
       //   collapseWhitespace: true,
       //   removeComments: true,
@@ -61,7 +62,7 @@ module.exports = {
       template: paths.src + '/article.html', // template file
       // template: paths.src + '/article.html', // template file
       filename: 'article.html', // output file
-      chunks: 'article',
+      chunks: ['article'],
       // inject: false,
       // filename: 'article.html', // output file
       // inject: 'body',

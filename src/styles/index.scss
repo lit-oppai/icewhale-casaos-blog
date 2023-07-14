@@ -6,6 +6,8 @@
 @font-face {
   font-family: 'Rajdhani';
   src: url("../fonts/Rajdhani/Rajdhani-Bold.ttf");
+  //src: url("../fonts/Rajdhani/Rajdhani-SemiBold.ttf");
+  src: url("../fonts/Rajdhani/Rajdhani-Medium.ttf");
 }
 
 @font-face {
@@ -24,4 +26,5 @@
 @import 'layout';
 @import 'main';
 @import 'article';
+//@import '~tailwindcss/base';
 //@import "../fonts/fontawesome/scss/solid.scss";

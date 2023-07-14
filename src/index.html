@@ -11,18 +11,21 @@
 <body class="flex flex-col">
 <!--    <div id="root"></div>-->
 <header class="header">
-  <div class="content">
+  <div class="grow flex flex-row" id="header-extra">
+    <img class="ml-6" id="header-extra-button" src="./fonts/icon/menu.svg" />
+    <div class="nav-item grow flex justify-center">zimaboard</div>
+  </div>
+  <div class="content" id="header-nav">
     <div class="nav-item grow-0">Home</div>
     <div class="nav-item grow-0">ZIMABOARD</div>
     <div class="nav-item grow-0">CASAOS</div>
     <div class="nav-item grow-0">DISCORD</div>
     <div class="nav-item grow-0">SHOP</div>
-    <div class="nav-item grow-0">CONTACT US</div>
-    <div class="nav-item grow"></div>
-    <div class="grow">
-      <i class="fas fa-search" onclick="openSearch()"></i>
-      <input id="searchBox" onkeydown="search(event)" style="display: none;" type="text" />
-    </div>
+    <div class="nav-item grow">CONTACT US</div>
+  </div>
+  <div class="shrink-0 search">
+    <img class="searchIcon mr-6" src="fonts/icon/search.svg">
+    <input class="searchInput close" id="searchBox" type="text" />
   </div>
 </header>
 
@@ -76,7 +79,7 @@
         <div class="swiper-wrapper">
           <!-- Slides Start -->
           <div class="swiper-slide">
-            <div class="bgImgSrc1 bgImg p-8 flex flex-col justify-end">
+            <div class="bgImgSrc1 bgImg flex flex-col justify-end">
               <p class="article_tag">Ad Blocker</p>
               <p class="article_title my-2">ZimaBoard Prime Discount Day -14th Of Each Month</p>
               <p class="flex article_info items-center">
@@ -87,7 +90,7 @@
           </div>
 
           <div class="swiper-slide">
-            <div class="bgImgSrc1 bgImg p-8 flex flex-col justify-end">
+            <div class="bgImgSrc1 bgImg flex flex-col justify-end">
               <p class="article_tag">Ad Blocker</p>
               <p class="article_title my-2">ZimaBoard Prime Discount Day -14th Of Each Month</p>
               <p class="flex article_info items-center">
@@ -101,17 +104,6 @@
 
         <div class="swiper-pagination"></div>
       </div>
-
-      <!--<div class="swiper-slide">
-        <div class="bgImgSrc1 bgImg p-8 flex flex-col justify-end">
-          <p class="article_tag">Ad Blocker</p>
-          <p class="article_title my-2">ZimaBoard Prime Discount Day -14th Of Each Month</p>
-          <p class="flex article_info items-center">
-            <img class="w-5 h-5 mr-2" src="./fonts/zima/logo-dark.svg" />
-            ZimaBoard - 01/06/2023
-          </p>
-        </div>
-      </div>-->
 
     </section>
     <!-- Latest News End-->
@@ -129,7 +121,7 @@
       </div>
       <div class="flex justify-between">
         <div class="card">
-          <img alt="" class="w-72 h-41" src="./images/pro_items/1.png" />
+          <img alt="" class="tipoc" src="./images/pro_items/1.png" />
           <div class="copywriters p-4 ">
             <p class="pre_title">Reviews</p>
             <p class="title my-2 line-clamp-2 text-ellipsis">LattePanda Review: Alternative Of Raspberry Pi</p>
@@ -141,7 +133,7 @@
         </div>
 
         <div class="card">
-          <img alt="" class="w-72 h-41" src="./images/pro_items/2.png" />
+          <img alt="" class="tipoc" src="./images/pro_items/2.png" />
           <div class="copywriters p-4 ">
             <p class="pre_title">Reviews</p>
             <p class="title my-2 line-clamp-2 text-ellipsis">Raspberry Pi 4 Review: The Ultimate Mini Computer For DIY
@@ -154,7 +146,7 @@
         </div>
 
         <div class="card">
-          <img alt="" class="w-72 h-41" src="./images/pro_items/3.png" />
+          <img alt="" class="tipoc" src="./images/pro_items/3.png" />
           <div class="copywriters p-4 ">
             <p class="pre_title">Reviews</p>
             <p class="title my-2 line-clamp-2 text-ellipsis">Odyssey X86J4125 Vs ZimaBoard: Which Mini PC Reigns
@@ -182,7 +174,7 @@
       </div>
       <div class="flex justify-between">
         <div class="card">
-          <img alt="" class="w-72 h-41" src="./images/media_servers/1.png" />
+          <img alt="" class="tipoc" src="./images/media_servers/1.png" />
 
           <div class="copywriters p-4 ">
             <p class="pre_title">Media Servers</p>
@@ -195,7 +187,7 @@
         </div>
 
         <div class="card">
-          <img alt="" class="w-72 h-41" src="./images/media_servers/2.png" />
+          <img alt="" class="tipoc" src="./images/media_servers/2.png" />
           <div class="copywriters p-4 ">
             <p class="pre_title">Media Servers</p>
             <p class="title my-2 line-clamp-2 text-ellipsis">How to Choose and Setup a Media Server for Home</p>
@@ -207,7 +199,7 @@
         </div>
 
         <div class="card">
-          <img alt="" class="w-72 h-41" src="./images/media_servers/3.png" />
+          <img alt="" class="tipoc" src="./images/media_servers/3.png" />
           <div class="copywriters p-4 ">
             <p class="pre_title">Media Servers</p>
             <p class="title my-2 line-clamp-2 text-ellipsis">How to Set Up a Media Server with Plex</p>
@@ -234,7 +226,7 @@
       </div>
       <div class="flex items-center justify-evenly feature-article">
 
-        <div class="bgImgSrc1 bgImg p-10 flex flex-col">
+        <div class="bgImgSrc1 bgImg flex flex-col">
           <p class="article_tag mb-4">Ad Blocker</p>
           <p class="article_title grow">How to Block Ads on Instagram with ZimaBoard Single Board Server</p>
           <p class="flex article_info items-center shrink">
@@ -243,7 +235,7 @@
           </p>
         </div>
 
-        <div class="bgImgSrc2 bgImg p-10 flex flex-col">
+        <div class="bgImgSrc2 bgImg flex flex-col">
           <p class="article_tag mb-4">Ad Blocker</p>
           <p class="article_title grow">How to Block Ads on Facebook with ZimaBoard Personal Server</p>
           <p class="flex article_info items-center shrink">
@@ -269,7 +261,7 @@
       </div>
       <div class="flex justify-between">
         <div class="card">
-          <img alt="" class="w-72 h-41" src="./images/personal_NAS/1.png" />
+          <img alt="" class="tipoc" src="./images/personal_NAS/1.png" />
           <div class="copywriters p-4 ">
             <p class="pre_title">Ad Blocker</p>
             <p class="title my-2 line-clamp-2 text-ellipsis">The Best NAS (Network Attached Storage) Devices for
@@ -282,7 +274,7 @@
         </div>
 
         <div class="card">
-          <img alt="" class="w-72 h-41" src="./images/personal_NAS/2.png" />
+          <img alt="" class="tipoc" src="./images/personal_NAS/2.png" />
           <div class="copywriters p-4 ">
             <p class="pre_title">Ad Blocker</p>
             <p class="title my-2 line-clamp-2 text-ellipsis">The Best NAS for Most Home Users -2023 Update</p>
@@ -294,7 +286,7 @@
         </div>
 
         <div class="card">
-          <img alt="" class="w-72 h-41" src="./images/personal_NAS/3.png" />
+          <img alt="" class="tipoc" src="./images/personal_NAS/3.png" />
           <div class="copywriters p-4 ">
             <p class="pre_title">Ad Blocker</p>
             <p class="title my-2 line-clamp-2 text-ellipsis">10 Best NAS for Home Users in 2023 (With Use Case)</p>
@@ -312,7 +304,7 @@
     <section class="mb-12" id="content6">
       <div class="flex justify-between headline mb-4 items-center">
         <div class="title">
-          Media Servers
+          Featured Posts
           <span class="badge">Total 10 articles</span>
         </div>
         <button class="operation">
@@ -321,7 +313,7 @@
       </div>
       <div class="flex justify-between">
         <div class="card">
-          <img alt="" class="w-72 h-41" src="./images/media_servers/1.png" />
+          <img alt="" class="tipoc" src="./images/media_servers/1.png" />
           <div class="copywriters p-4 ">
             <p class="pre_title">Reviews</p>
             <p class="title my-2 line-clamp-2 text-ellipsis">Top 10 Media Servers for Home Use In 2023</p>
@@ -333,7 +325,7 @@
         </div>
 
         <div class="card">
-          <img alt="" class="w-72 h-41" src="./images/media_servers/2.png" />
+          <img alt="" class="tipoc" src="./images/media_servers/2.png" />
           <div class="copywriters p-4 ">
             <p class="pre_title">Reviews</p>
             <p class="title my-2 line-clamp-2 text-ellipsis">How to Choose and Setup a Media Server for Home</p>
@@ -345,7 +337,7 @@
         </div>
 
         <div class="card">
-          <img alt="" class="w-72 h-41" src="./images/media_servers/3.png" />
+          <img alt="" class="tipoc" src="./images/media_servers/3.png" />
           <div class="copywriters p-4 ">
             <p class="pre_title">Reviews</p>
             <p class="title my-2 line-clamp-2 text-ellipsis">How to Set Up a Media Server with Plex</p>
