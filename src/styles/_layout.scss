@@ -225,15 +225,10 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-    }
 
-    .swiper-button-next {
-      /* Rectangle 3468518 */
-      background: #1A1A1A;
-    }
-
-    .swiper-button-prev {
-
+      &:hover {
+        background: hsla(0, 0%, 10%, 1);
+      }
     }
 
     //.swiper-pagination {

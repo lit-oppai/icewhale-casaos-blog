@@ -1,7 +1,7 @@
 // article card
 section {
   .headline {
-    .btn-dark {
+    .operation:hover {
       background: hsla(0, 0%, 10%, 1);
     }
   }
@@ -109,11 +109,6 @@ section {
         /* 主色 */
         color: #F1B335;
       }
-
-      .btn-dark {
-        background: hsla(0, 0%, 10%, 1);
-      }
-
     }
   }
   @media (max-width: 376px) {
