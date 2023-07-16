@@ -195,7 +195,7 @@ body {
       }
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 376px) {
       .bgImg:not(:first-child) {
         display: none;
       }
@@ -213,7 +213,7 @@ body {
       width: 896px;
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 376px) {
       .swiper {
         height: 184px;
         width: $mobile-content-width;
@@ -272,7 +272,7 @@ body {
         color: #FFFFFF;
       }
 
-      @media (min-width: 376px) {
+      @media (min-width: 377px) {
         .article_title {
           /* ZimaBoard Prime Discount Day -14th Of Each Month */
           font-family: 'Rajdhani';
@@ -303,7 +303,7 @@ body {
       }
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 376px) {
       .bgImg {
         padding: 1rem;
       }
@@ -329,7 +329,7 @@ footer {
   width: 100%;
   height: 448px;
   background: #101010;
-  @media (max-width: 375px) {
+  @media (max-width: 376px) {
     height: 412px;
   }
 }
