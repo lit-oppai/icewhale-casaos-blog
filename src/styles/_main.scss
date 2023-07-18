@@ -3,6 +3,7 @@
   width: 100%;
   height: auto;
   margin-top: 3rem;
+  padding: 0 2rem;
   //display: grid;
   //section {
   //  display: grid;
@@ -14,5 +15,6 @@
     margin-top: 2rem;
     width: $mobile-content-width;
     height: auto;
+    padding: 0;
   }
 }

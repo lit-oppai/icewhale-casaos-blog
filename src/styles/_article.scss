@@ -20,6 +20,12 @@ section {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  @media (min-width: 376px) and (max-width: 578px) {
+    .is-grid-poster-wall {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
   .card {
     //height: 100%;
     //width: 100%;
@@ -90,6 +96,10 @@ section {
         font-feature-settings: 'pnum' on, 'lnum' on;
 
         color: #1A1A1A;
+        
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }
