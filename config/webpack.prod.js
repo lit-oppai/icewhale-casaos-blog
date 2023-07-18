@@ -41,11 +41,11 @@ module.exports = merge(common, {
     }),
   ],
   optimization: {
-    minimize: false,
-    minimizer: [new CssMinimizerPlugin()],
-    runtimeChunk: {
-      name: 'runtime',
-    },
+    // minimize: false,
+    // minimizer: [new CssMinimizerPlugin()],
+    // runtimeChunk: {
+    //   name: 'runtime',
+    // },
   },
   performance: {
     hints: false,

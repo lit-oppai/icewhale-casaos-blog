@@ -4,7 +4,7 @@ body {
 
 .body {
   //flex-direction: column;
-  width: 100vw;
+  //width: 100vw;
   //padding-top: 108px;
   margin-top: 60px;
   display: flex;
@@ -135,8 +135,9 @@ body {
     background: hsla(0, 0%, 2%, 1);
     //width: 896px;
     //height: 600px;
-    width: 100%;
+    //width: 100%;
     height: 100%;
+    padding: 1rem;
 
     .bgImgSrc1 {
       background-image: url("../images/AD_blocker/1.png");
@@ -147,15 +148,17 @@ body {
     }
 
     .bgImg {
-      background-size: 100% 100%;
+      background-size: auto 100%;
       background-position: center;
-      width: 424px;
+      //width: 424px;
+      width: 100%;
       height: 568px;
+      object-fit: cover;
       padding: 2.5rem;
       transition: background .5s;
 
       &:hover {
-        background-size: 110% 110%;
+        background-size: auto 110%;
       }
 
       .article_tag {
@@ -214,9 +217,18 @@ body {
   }
 
   .slideshow-article {
+    //display: grid;
+
     .swiper {
-      height: 504px;
-      width: 896px;
+      max-height: 31.5rem;
+      height: 100%;
+      //width: 896px;
+      max-width: 56rem;
+      width: 100%;
+
+      .swiper-wrapper {
+        height: 100%;
+      }
     }
 
     @media (max-width: 376px) {
@@ -273,14 +285,21 @@ body {
     }
 
     .bgImg {
-      background-size: 100% 100%;
+      //background-size: cover;
+      background-size: auto 100%;
       background-position: center;
-      height: 100%;
+      //height: 100%;
+      height: 504px;
+      //height: auto;
+      //transform: scale(1);
+      //width: auto;
       width: 100%;
+      object-fit: cover;
       transition: background .5s;
 
       &:hover {
-        background-size: 110% 110%;
+        background-size: auto 110%;
+        //transform: scale(1.5);
       }
 
       .bgMask {

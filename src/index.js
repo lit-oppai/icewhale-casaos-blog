@@ -57,6 +57,8 @@ import 'swiper/css/pagination'
 // const SWIPER = document.querySelector('.swiper')
 const swiper = new Swiper('.swiper', {
   modules: [Navigation, Pagination],
+  // autoHeight: true,
+  // freeMode: true,
   // Optional parameters
   // direction: 'vertical',
   loop: true,
