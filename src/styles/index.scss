@@ -1,3 +1,7 @@
+@import '~tailwindcss/base';
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
+
 @font-face {
   font-family: 'Inter';
   src: url('../fonts/Inter.ttf');
@@ -26,5 +30,3 @@
 @import 'layout';
 @import 'main';
 @import 'article';
-//@import '~tailwindcss/base';
-//@import "../fonts/fontawesome/scss/solid.scss";

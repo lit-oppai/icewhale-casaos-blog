@@ -1,6 +1,7 @@
 const { merge } = require('webpack-merge')
 
 const common = require('./webpack.common')
+const tailwindcss = require('tailwindcss')
 
 module.exports = merge(common, {
   // Set the mode to development or production
@@ -29,7 +30,11 @@ module.exports = merge(common, {
             loader: 'css-loader',
             options: { sourceMap: true, importLoaders: 1, modules: false },
           },
-          { loader: 'postcss-loader', options: { sourceMap: true } },
+          {
+            loader: 'postcss-loader', options: {
+              sourceMap: true,
+            }
+          },
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },

@@ -103,6 +103,13 @@ const swiper = new Swiper('.swiper', {
 // })
 
 function activateDirectory() {
+  // 去除 footer 830px
+  if (document.querySelector('.footer')) {
+    const footerHeight = document.querySelector('.footer').offsetHeight
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - footerHeight) {
+      return
+    }
+  }
   if (screen.width < 1440) {
     return
   }
@@ -127,8 +134,8 @@ function getCurrentContentId() {
   // 获取当前可视区域的id
   const contentList = document.querySelectorAll('[id^="content"]')
   const contentIdList = Array.from(contentList).map((content) => {
-    const contentId = content.getAttribute('id')
     const contentTop = content.getBoundingClientRect().top
+    const contentId = content.getAttribute('id')
     return {
       contentId,
       contentTop,
@@ -136,15 +143,14 @@ function getCurrentContentId() {
   })
   const contentId = contentIdList
     .filter((content) => content.contentTop > 0)
-    .sort((a, b) => a.contentTop - b.contentTop)[0].contentId
-  return contentId
+    .sort((a, b) => a.contentTop - b.contentTop)[0]?.contentId || 'content6'
+  return contentId 
 }
 
 activateDirectory()
 window.addEventListener('scroll', activateDirectory)
 document.querySelectorAll('.content-ref').forEach((item) => {
   item.addEventListener('click', (e) => {
-    console.log(e)
     const target = e.target
     const contentId = target.dataset['contentId']
     let realViewHeight = document.querySelector(`#${contentId}`).offsetTop - 108
@@ -157,7 +163,7 @@ document.querySelectorAll('.content-ref').forEach((item) => {
 })
 
 //init header
-if (screen.width <= 375) {
+/* if (screen.width <= 375) {
   const headerNav = document.querySelector('#header-nav')
   headerNav.classList.add('close')
   // add event listener
@@ -177,19 +183,19 @@ if (screen.width <= 375) {
 } else {
   const headerNav = document.querySelector('#header-extra')
   headerNav.classList.add('close')
-}
+} */
 
 // init search
-document.querySelector('.searchIcon').addEventListener('click', (e) => {
+/* document.querySelector('.searchIcon').addEventListener('click', (e) => {
   const ICON = document.querySelector('.searchIcon')
   const INPUT = document.querySelector('.searchInput')
   ICON.classList.add('close')
   INPUT.classList.remove('close')
   INPUT.focus()
-})
+}) */
 
 // global click event
-document.addEventListener('click', (e) => {
+/* document.addEventListener('click', (e) => {
   // close search
   const ICON = document.querySelector('.searchIcon')
   const INPUT = document.querySelector('.searchInput')
@@ -197,4 +203,32 @@ document.addEventListener('click', (e) => {
     ICON.classList.remove('close')
     INPUT.classList.add('close')
   }
+}) */
+
+// init header
+// const FOO_1_STATE = document.querySelector('.foo-1-state')
+// FOO_1_STATE.addEventListener('pointerenter', (e) => {
+//   const FOO_1 = document.querySelector('.foo-1')
+//   FOO_1.classList.remove('hidden')
+// })
+for (let i = 1; i < 5; i++) {
+  addPointerenterEventToNavMenu(`.foo-${i}-state`, `.foo-${i}`)
+}
+function addPointerenterEventToNavMenu(stateSeletor, menuSelector) {
+  const FOO = document.querySelector(stateSeletor)
+  FOO.addEventListener('pointerenter', (e) => {
+    cancelNavNenu();
+    document.querySelector(menuSelector).classList.remove('hidden')
+  })
+}
+const CANCEL_NAV_TRRIGER = document.querySelector('.cancel-nav-trigger')
+CANCEL_NAV_TRRIGER.addEventListener('pointerleave', (e) => {
+  CANCEL_NAV_TRRIGER.querySelectorAll('div').forEach((item) => {
+    item.classList.add('hidden')
+  })
 })
+function cancelNavNenu() {
+  document.querySelectorAll('.cancel-nav-trigger div').forEach((item) => {
+    item.classList.add('hidden')
+  })
+}
